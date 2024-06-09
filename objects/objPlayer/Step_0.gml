@@ -22,15 +22,10 @@ if(ww.state != State.play){ return; }
 
 	//Apply the new size
 	camera_set_view_size(view_camera[0], new_w, new_h);
-	//cameraBounds();
+	cameraBounds();
 
-	var vpos_x = camera_get_view_x(view_camera[0]);
-	var vpos_y = camera_get_view_y(view_camera[0]);
-
-	//change coordinates of camera so zoom is centered
-	var new_x = lerp(vpos_x,vpos_x+(view_w - zoom_level * default_zoom_width)/2, rate);
-	var new_y = lerp(vpos_y,vpos_y+(view_h - zoom_level * default_zoom_height)/2, rate);
-	camera_set_view_pos(view_camera[0], new_x, new_y);
+	
+	
 
 
 
@@ -41,11 +36,15 @@ if(blockInput){ return; }
 
 if(xIn != 0 xor yIn != 0){
 	var xTar = xSpot + xIn;
+	if(xTar > xSpot){ facing = 1; }
+	if(xTar < xSpot){ facing = -1; }
 	var yTar = ySpot + yIn;
 	if(inBounds(xTar, yTar)){
 		
 		xSpot = xTar;
 		ySpot = yTar;
 		
+		
+		if(roll(20)){ mobSpawn(); }
 	}
 }
