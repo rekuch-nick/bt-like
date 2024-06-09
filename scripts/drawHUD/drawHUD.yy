@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"drawHUD",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"drawHUD",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
